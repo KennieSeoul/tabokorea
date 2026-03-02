@@ -26,9 +26,9 @@ body {
     color: var(--text-color);
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* 최소 높이를 화면 전체로 설정 (내용이 많으면 늘어남) */
     margin: 0;
+    padding: 20px 0; /* 상하 여백 추가 */
     transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
@@ -43,6 +43,7 @@ body {
     transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
     width: 90%;
     max-width: 500px;
+    height: fit-content; /* 내용에 맞게 높이 조절 */
 }
 
 /* 테마 토글 버튼 스타일 */
