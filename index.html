@@ -30,6 +30,29 @@
                 <button type="submit" class="submit-btn">문의하기</button>
             </form>
         </section>
+
+        <hr class="divider"> <!-- 구분선 -->
+
+        <section class="comment-section">
+            <h3>댓글 및 피드백</h3>
+            <div id="disqus_thread"></div>
+            <script>
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+                var disqus_config = function () {
+                    this.page.url = window.location.href;  // 페이지의 고유 URL
+                    this.page.identifier = 'tabokorea-main'; // 페이지의 고유 식별자
+                };
+                (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://tabokorea.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </section>
     </div>
     <script src="main.js"></script> <!-- 외부 JavaScript 파일을 연결하여 웹사이트에 동적인 기능을 추가합니다. -->
 </body>

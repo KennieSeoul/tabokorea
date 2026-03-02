@@ -169,6 +169,18 @@ h1 {
     background-color: #218838;
 }
 
+/* 댓글 섹션 스타일 */
+.comment-section {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.comment-section h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
 #generate-btn {
 ...
     background-color: var(--btn-bg);
