@@ -1,4 +1,3 @@
-
 # Project Blueprint: Korean Lotto Number Generator
 
 ## Overview
@@ -8,22 +7,31 @@ This project is a simple web application that generates and displays a set of 6 
 ## Features
 
 *   **Number Generation:** Generates 6 unique random numbers between 1 and 45.
-*   **Display:** Displays the generated numbers in a clear and visually appealing way.
-*   **User Interaction:** A button allows the user to generate a new set of numbers at any time.
+*   **Color-Coded Display:** Displays numbers with their official lottery color ranges:
+    *   1-10: Yellow
+    *   11-20: Blue
+    *   21-30: Red
+    *   31-40: Gray
+    *   41-45: Green
+*   **Theme Management:** Includes a Dark/Light mode toggle that persists in local storage.
+*   **Responsive Design:** Optimized for both desktop and mobile viewing.
 
 ## Design
 
 *   **Layout:** A clean, centered layout with a title, a button, and a display area for the numbers.
-*   **Styling:** Modern and visually appealing design with custom fonts, colors, and animations.
-*   **Responsiveness:** The layout will be responsive and work well on both desktop and mobile devices.
+*   **Styling:** Modern and visually appealing design with CSS variables, smooth transitions, and hover effects.
+*   **Interactivity:** Smooth button interactions and hover scaling on lotto numbers.
 
 ## Implemented Features
 
-1.  **`index.html` Created:** Set up the basic HTML structure with a title, heading, number container, and a button.
-2.  **`style.css` Created:** Styled the page for a clean and modern look.
-3.  **`main.js` Created:** Implemented the core logic for generating and displaying the lotto numbers.
-4.  **Code Commented:** Added detailed comments to all files for beginners.
+1.  **`index.html` Update:** Added a theme toggle button and structured the layout for responsiveness.
+2.  **`style.css` Refactor:** Implemented CSS variables and dark mode styles for easier maintenance.
+3.  **`main.js` Core Logic:** 
+    *   Added `generateLottoNumbers` to provide sorted, unique numbers.
+    *   Implemented `setTheme` and `localStorage` integration for persistent theme selection.
+    *   Created dynamic number range styling in `displayNumbers`.
+4.  **Code Quality:** Added detailed comments to all files for clarity and maintainability.
 
 ## Current Plan
 
-1.  **Color Coding:** Update the lotto numbers to have different background colors based on their value ranges (e.g., 1-10: Yellow, 11-20: Blue, etc.) which is the standard Korean Lotto style.
+1.  **Deployment:** Push the latest features (Dark Mode & Color Coding) to the GitHub repository.
