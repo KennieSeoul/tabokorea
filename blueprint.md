@@ -14,6 +14,7 @@ This project is a simple web application that generates and displays a set of 6 
     *   31-40: Gray
     *   41-45: Green
 *   **Theme Management:** Includes a Dark/Light mode toggle that persists in local storage.
+*   **Partnership Inquiry Form:** A simple contact form powered by Formspree to receive business inquiries and suggestions.
 *   **Responsive Design:** Optimized for both desktop and mobile viewing.
 
 ## Design

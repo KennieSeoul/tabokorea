@@ -12,6 +12,22 @@
         <h1>한국 로또 번호 생성기</h1> <!-- 웹사이트의 메인 제목입니다. -->
         <div class="lotto-numbers" id="lotto-numbers"></div> <!-- 생성된 로또 번호가 표시될 영역입니다. JavaScript로 내용이 채워집니다. -->
         <button id="generate-btn">번호 생성</button> <!-- 클릭하면 새로운 로또 번호를 생성하는 버튼입니다. -->
+
+        <hr class="divider"> <!-- 구분선 -->
+
+        <section class="contact-section">
+            <h3>제휴 및 문의</h3>
+            <p>비즈니스 문의나 건의사항을 보내주세요.</p>
+            <form action="https://formspree.io/f/xdalrawa" method="POST" id="contact-form">
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="이메일 주소" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" placeholder="문의 내용 (예: 제휴 문의, 기능 제안 등)" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">문의하기</button>
+            </form>
+        </section>
     </div>
     <script src="main.js"></script> <!-- 외부 JavaScript 파일을 연결하여 웹사이트에 동적인 기능을 추가합니다. -->
 </body>

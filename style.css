@@ -106,7 +106,71 @@ h1 {
 .number-green { background-color: #b0d840; } /* 41~45 */
 
 /* generate-btn ID에 대한 스타일을 지정합니다. */
+/* 구분선 스타일 */
+.divider {
+    border: 0;
+    border-top: 1px solid var(--shadow-color);
+    margin: 40px 0 30px;
+}
+
+/* 제휴 문의 섹션 스타일 */
+.contact-section {
+    text-align: left;
+}
+
+.contact-section h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.contact-section p {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--shadow-color);
+    border-radius: 5px;
+    background-color: var(--container-bg);
+    color: var(--text-color);
+    font-family: inherit;
+    box-sizing: border-box; /* 패딩이 너비에 포함되도록 함 */
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #28a745; /* 초록색 버튼 */
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+}
+
+.submit-btn:hover {
+    background-color: #218838;
+}
+
 #generate-btn {
+...
     background-color: var(--btn-bg);
     color: white;
     padding: 15px 30px;
