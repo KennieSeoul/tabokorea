@@ -1,17 +1,17 @@
-<!DOCTYPE html>
-<html lang="ko">
+<!DOCTYPE html> <!-- HTML 문서 유형을 선언합니다. 이 문서는 HTML5 문서입니다. -->
+<html lang="ko"> <!-- HTML 문서의 시작을 나타내며, 언어를 한국어로 설정합니다. -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>로또 번호 생성기</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8"> <!-- 문서의 문자 인코딩을 UTF-8로 설정합니다. 한글이 깨지지 않도록 합니다. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 모바일 기기에서도 화면이 잘 보이도록 뷰포트를 설정합니다. -->
+    <title>한국 로또 번호 생성기</title> <!-- 웹사이트 탭에 표시될 제목입니다. -->
+    <link rel="stylesheet" href="style.css"> <!-- 외부 CSS 파일을 연결하여 HTML 요소의 스타일을 지정합니다. -->
 </head>
-<body>
-    <div class="container">
-        <h1>로또 번호 생성기</h1>
-        <button id="generate">번호 생성</button>
-        <div id="numbers" class="numbers-container"></div>
+<body> <!-- 웹사이트의 실제 내용이 표시되는 부분입니다. -->
+    <div class="container"> <!-- 웹사이트 콘텐츠를 감싸는 컨테이너입니다. 스타일링을 위해 사용됩니다. -->
+        <h1>한국 로또 번호 생성기</h1> <!-- 웹사이트의 메인 제목입니다. -->
+        <div class="lotto-numbers" id="lotto-numbers"></div> <!-- 생성된 로또 번호가 표시될 영역입니다. JavaScript로 내용이 채워집니다. -->
+        <button id="generate-btn">번호 생성</button> <!-- 클릭하면 새로운 로또 번호를 생성하는 버튼입니다. -->
     </div>
-    <script src="main.js"></script>
+    <script src="main.js"></script> <!-- 외부 JavaScript 파일을 연결하여 웹사이트에 동적인 기능을 추가합니다. -->
 </body>
 </html>

@@ -17,18 +17,13 @@ This project is a simple web application that generates and displays a set of 6 
 *   **Styling:** Modern and visually appealing design with custom fonts, colors, and animations.
 *   **Responsiveness:** The layout will be responsive and work well on both desktop and mobile devices.
 
+## Implemented Features
+
+1.  **`index.html` Created:** Set up the basic HTML structure with a title, heading, number container, and a button.
+2.  **`style.css` Created:** Styled the page for a clean and modern look.
+3.  **`main.js` Created:** Implemented the core logic for generating and displaying the lotto numbers.
+4.  **Code Commented:** Added detailed comments to all files for beginners.
+
 ## Current Plan
 
-1.  **Modify `index.html`:**
-    *   Update the title to "Korean Lotto Number Generator".
-    *   Add a main container for the application.
-    *   Add a title heading.
-    *   Add a placeholder for the generated lotto numbers.
-    *   Add a button to trigger the number generation.
-2.  **Modify `style.css`:**
-    *   Add styles for the overall layout, typography, button, and the number display area.
-    *   Incorporate a modern color palette and animations.
-3.  **Modify `main.js`:**
-    *   Implement the `generateLottoNumbers` function to create an array of 6 unique random numbers from 1 to 45.
-    *   Add an event listener to the "Generate" button.
-    *   When the button is clicked, call the `generateLottoNumbers` function and update the content of the number display area.
+1.  **Color Coding:** Update the lotto numbers to have different background colors based on their value ranges (e.g., 1-10: Yellow, 11-20: Blue, etc.) which is the standard Korean Lotto style.

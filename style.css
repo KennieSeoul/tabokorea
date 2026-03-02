@@ -1,68 +1,71 @@
+/* body 태그에 대한 스타일을 지정합니다. */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f2f5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+    font-family: 'Arial', sans-serif; /* 글꼴을 Arial로 설정하고, 사용할 수 없으면 기본 sans-serif 글꼴을 사용합니다. */
+    background-color: #f0f2f5; /* 배경색을 밝은 회색으로 설정합니다. */
+    display: flex; /* 자식 요소들을 flexbox로 정렬합니다. */
+    justify-content: center; /* 자식 요소들을 가로 방향으로 가운데 정렬합니다. */
+    align-items: center; /* 자식 요소들을 세로 방향으로 가운데 정렬합니다. */
+    height: 100vh; /* body의 높이를 화면 전체 높이로 설정합니다. */
+    margin: 0; /* body의 바깥쪽 여백을 없애서 화면에 꽉 차게 만듭니다. */
 }
 
+/* container 클래스에 대한 스타일을 지정합니다. */
 .container {
-    text-align: center;
-    background-color: white;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center; /* 내부 텍스트를 가운데 정렬합니다. */
+    background-color: white; /* 배경색을 흰색으로 설정합니다. */
+    padding: 40px; /* 안쪽 여백을 40px로 설정합니다. */
+    border-radius: 10px; /* 모서리를 10px만큼 둥글게 만듭니다. */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과를 추가하여 입체감을 줍니다. */
 }
 
+/* h1 태그에 대한 스타일을 지정합니다. */
 h1 {
-    margin-bottom: 30px;
-    color: #333;
+    color: #333; /* 글자색을 어두운 회색으로 설정합니다. */
+    margin-bottom: 30px; /* 아래쪽 바깥 여백을 30px로 설정합니다. */
 }
 
+/* lotto-numbers 클래스에 대한 스타일을 지정합니다. */
 .lotto-numbers {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
+    display: flex; /* 자식 요소들을 flexbox로 정렬합니다. */
+    justify-content: center; /* 자식 요소들을 가로 방향으로 가운데 정렬합니다. */
+    gap: 10px; /* 자식 요소들 사이의 간격을 10px로 설정합니다. */
+    margin-bottom: 30px; /* 아래쪽 바깥 여백을 30px로 설정합니다. */
 }
 
-.lotto-number {
-    width: 50px;
-    height: 50px;
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    margin: 0 5px;
-    animation: fadeIn 0.5s ease-in-out;
+/* number 클래스에 대한 스타일을 지정합니다. */
+.number {
+    width: 50px; /* 너비를 50px로 설정합니다. */
+    height: 50px; /* 높이를 50px로 설정합니다. */
+    border-radius: 50%; /* 모서리를 50%만큼 둥글게 만들어 원 모양으로 만듭니다. */
+    color: white; /* 글자색을 흰색으로 설정합니다. */
+    font-size: 24px; /* 글자 크기를 24px로 설정합니다. */
+    font-weight: bold; /* 글자를 굵게 만듭니다. */
+    display: flex; /* 자식 요소들을 flexbox로 정렬합니다. */
+    justify-content: center; /* 자식 요소들을 가로 방향으로 가운데 정렬합니다. */
+    align-items: center; /* 자식 요소들을 세로 방향으로 가운데 정렬합니다. */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* 글자에 옅은 그림자를 주어 가독성을 높입니다. */
 }
 
+/* 로또 번호 범위에 따른 배경색 클래스들입니다. */
+.number-yellow { background-color: #fbc400; } /* 1~10 */
+.number-blue { background-color: #69c8f2; } /* 11~20 */
+.number-red { background-color: #ff7272; } /* 21~30 */
+.number-gray { background-color: #aaa; } /* 31~40 */
+.number-green { background-color: #b0d840; } /* 41~45 */
+
+/* generate-btn ID에 대한 스타일을 지정합니다. */
 #generate-btn {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 18px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    background-color: #008CBA; /* 배경색을 파란색으로 설정합니다. */
+    color: white; /* 글자색을 흰색으로 설정합니다. */
+    padding: 15px 30px; /* 안쪽 여백을 위아래 15px, 좌우 30px로 설정합니다. */
+    border: none; /* 테두리를 없앱니다. */
+    border-radius: 5px; /* 모서리를 5px만큼 둥글게 만듭니다. */
+    font-size: 18px; /* 글자 크기를 18px로 설정합니다. */
+    cursor: pointer; /* 마우스 커서를 올렸을 때 손가락 모양으로 변경합니다. */
+    transition: background-color 0.3s; /* 배경색이 변할 때 0.3초 동안 부드럽게 전환되도록 합니다. */
 }
 
+/* generate-btn ID에 마우스를 올렸을 때의 스타일을 지정합니다. */
 #generate-btn:hover {
-    background-color: #0056b3;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+    background-color: #005f7a; /* 배경색을 더 어두운 파란색으로 변경합니다. */
 }
