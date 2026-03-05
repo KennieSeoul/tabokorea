@@ -1,0 +1,1523 @@
+{
+  "name": "KRX",
+  "updated": "2026-03-05 19:39:26",
+  "children": [
+    {
+      "name": "IT",
+      "children": [
+        {
+          "name": "반도체와반도체장비",
+          "children": [
+            {
+              "name": "KOSPI200",
+              "ticker": "005930",
+              "cap": 11342026,
+              "change": 11.27,
+              "industry": "반도체"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "000660",
+              "cap": 6706529,
+              "change": 10.84,
+              "industry": "반도체"
+            },
+            {
+              "name": "KOSPI",
+              "ticker": "005935",
+              "cap": 1049343,
+              "change": 12.02,
+              "industry": "반도체"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "042700",
+              "cap": 300233,
+              "change": 21.62,
+              "industry": "반도체장비"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "058470",
+              "cap": 92521,
+              "change": 20.32,
+              "industry": "반도체장비"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "240810",
+              "cap": 65183,
+              "change": 23.53,
+              "industry": "반도체장비"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "095340",
+              "cap": 42818,
+              "change": 23.25,
+              "industry": "반도체장비"
+            },
+            {
+              "name": "KOSPI",
+              "ticker": "000990",
+              "cap": 41329,
+              "change": 22.9,
+              "industry": "반도체"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "403870",
+              "cap": 37758,
+              "change": 18.45,
+              "industry": "반도체장비"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "357780",
+              "cap": 36987,
+              "change": 29.92,
+              "industry": "반도체장비"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "084370",
+              "cap": 33205,
+              "change": 22.9,
+              "industry": "반도체장비"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "036930",
+              "cap": 31575,
+              "change": 24.16,
+              "industry": "반도체장비"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "005290",
+              "cap": 26581,
+              "change": 14.51,
+              "industry": "반도체장비"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "089030",
+              "cap": 24567,
+              "change": 30.0,
+              "industry": "반도체장비"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "319660",
+              "cap": 18915,
+              "change": 20.04,
+              "industry": "반도체장비"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "140860",
+              "cap": 18681,
+              "change": 12.18,
+              "industry": "반도체장비"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "095610",
+              "cap": 13920,
+              "change": 18.84,
+              "industry": "반도체장비"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "166090",
+              "cap": 13073,
+              "change": 22.63,
+              "industry": "반도체장비"
+            }
+          ]
+        },
+        {
+          "name": "하드웨어",
+          "children": [
+            {
+              "name": "KOSPI200",
+              "ticker": "373220",
+              "cap": 869310,
+              "change": 6.91,
+              "industry": "전자장비와기기"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "006400",
+              "cap": 316298,
+              "change": 11.82,
+              "industry": "전자장비와기기"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "009150",
+              "cap": 299895,
+              "change": 10.76,
+              "industry": "전자장비와기기"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "066570",
+              "cap": 187971,
+              "change": 5.87,
+              "industry": "전자장비와기기"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "003550",
+              "cap": 149286,
+              "change": 6.02,
+              "industry": "전자장비와기기"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "011070",
+              "cap": 62363,
+              "change": 7.11,
+              "industry": "전자장비와기기"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "034220",
+              "cap": 58150,
+              "change": 5.73,
+              "industry": "디스플레이"
+            },
+            {
+              "name": "KOSPI",
+              "ticker": "353200",
+              "cap": 29304,
+              "change": 18.84,
+              "industry": "전자장비와기기"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "222800",
+              "cap": 18671,
+              "change": 15.87,
+              "industry": "전자장비와기기"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "213420",
+              "cap": 9287,
+              "change": 10.0,
+              "industry": "디스플레이"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "046890",
+              "cap": 5731,
+              "change": 17.02,
+              "industry": "전자장비와기기"
+            },
+            {
+              "name": "KOSDAQ",
+              "ticker": "265520",
+              "cap": 3251,
+              "change": 11.92,
+              "industry": "디스플레이"
+            },
+            {
+              "name": "KONEX",
+              "ticker": "270210",
+              "cap": 482,
+              "change": 1.76,
+              "industry": "전자장비와기기"
+            }
+          ]
+        },
+        {
+          "name": "소프트웨어",
+          "children": [
+            {
+              "name": "KOSPI200",
+              "ticker": "018260",
+              "cap": 129144,
+              "change": 6.85,
+              "industry": "시스템소프트웨어"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "307950",
+              "cap": 110382,
+              "change": 8.34,
+              "industry": "IT서비스"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "022100",
+              "cap": 49107,
+              "change": 11.96,
+              "industry": "IT서비스"
+            },
+            {
+              "name": "KOSPI",
+              "ticker": "012510",
+              "cap": 36004,
+              "change": 0.08,
+              "industry": "시스템소프트웨어"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "042000",
+              "cap": 6851,
+              "change": 9.92,
+              "industry": "IT서비스"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "산업재",
+      "children": [
+        {
+          "name": "자본재",
+          "children": [
+            {
+              "name": "KOSPI200",
+              "ticker": "012450",
+              "cap": 712091,
+              "change": 4.38,
+              "industry": "우주항공과국방"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "034020",
+              "cap": 579708,
+              "change": 12.28,
+              "industry": "기계"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "042660",
+              "cap": 374131,
+              "change": 12.53,
+              "industry": "조선"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "267260",
+              "cap": 354704,
+              "change": 12.97,
+              "industry": "전기장비"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "009540",
+              "cap": 288047,
+              "change": 7.39,
+              "industry": "조선"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "272210",
+              "cap": 284890,
+              "change": 30.0,
+              "industry": "우주항공과국방"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "064350",
+              "cap": 246116,
+              "change": 11.63,
+              "industry": "우주항공과국방"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "010140",
+              "cap": 239360,
+              "change": 15.74,
+              "industry": "조선"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "298040",
+              "cap": 231622,
+              "change": 8.14,
+              "industry": "전기장비"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "267250",
+              "cap": 217231,
+              "change": 5.16,
+              "industry": "조선"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "010120",
+              "cap": 210300,
+              "change": 11.98,
+              "industry": "전기장비"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "047810",
+              "cap": 174480,
+              "change": 12.93,
+              "industry": "우주항공과국방"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "079550",
+              "cap": 167860,
+              "change": 23.26,
+              "industry": "우주항공과국방"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "000720",
+              "cap": 160352,
+              "change": 13.48,
+              "industry": "건설"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "006260",
+              "cap": 79092,
+              "change": 7.08,
+              "industry": "전기장비"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "028050",
+              "cap": 64974,
+              "change": 7.28,
+              "industry": "건설"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "241560",
+              "cap": 54830,
+              "change": 7.72,
+              "industry": "기계"
+            },
+            {
+              "name": "KOSPI",
+              "ticker": "103590",
+              "cap": 38625,
+              "change": 11.88,
+              "industry": "전기장비"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "047040",
+              "cap": 35494,
+              "change": 13.11,
+              "industry": "건설"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "375500",
+              "cap": 17257,
+              "change": 7.08,
+              "industry": "건설"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "006360",
+              "cap": 16731,
+              "change": 4.27,
+              "industry": "건설"
+            }
+          ]
+        },
+        {
+          "name": "운송",
+          "children": [
+            {
+              "name": "KOSPI200",
+              "ticker": "011200",
+              "cap": 200438,
+              "change": 3.66,
+              "industry": "해운"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "003490",
+              "cap": 90214,
+              "change": 5.6,
+              "industry": "항공"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "180640",
+              "cap": 80916,
+              "change": 7.26,
+              "industry": "육운"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "028670",
+              "cap": 30257,
+              "change": 9.9,
+              "industry": "해운"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "000120",
+              "cap": 26052,
+              "change": 3.35,
+              "industry": "육운"
+            },
+            {
+              "name": "KOSPI",
+              "ticker": "272450",
+              "cap": 3325,
+              "change": 4.43,
+              "industry": "항공"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "금융",
+      "children": [
+        {
+          "name": "은행",
+          "children": [
+            {
+              "name": "KOSPI200",
+              "ticker": "105560",
+              "cap": 555547,
+              "change": 8.21,
+              "industry": "은행"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "055550",
+              "cap": 440954,
+              "change": 4.62,
+              "industry": "은행"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "086790",
+              "cap": 309498,
+              "change": 5.4,
+              "industry": "은행"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "316140",
+              "cap": 247751,
+              "change": 6.13,
+              "industry": "은행"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "024110",
+              "cap": 189787,
+              "change": 6.25,
+              "industry": "은행"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "138930",
+              "cap": 58341,
+              "change": 6.58,
+              "industry": "은행"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "175330",
+              "cap": 55064,
+              "change": 3.36,
+              "industry": "은행"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "139130",
+              "cap": 27708,
+              "change": 5.96,
+              "industry": "은행"
+            }
+          ]
+        },
+        {
+          "name": "증권",
+          "children": [
+            {
+              "name": "KOSPI200",
+              "ticker": "006800",
+              "cap": 369740,
+              "change": 15.4,
+              "industry": "증권"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "138040",
+              "cap": 202907,
+              "change": 5.46,
+              "industry": "증권"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "071050",
+              "cap": 128448,
+              "change": 11.62,
+              "industry": "증권"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "039490",
+              "cap": 119565,
+              "change": 18.39,
+              "industry": "증권"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "005940",
+              "cap": 114208,
+              "change": 11.28,
+              "industry": "증권"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "016360",
+              "cap": 85014,
+              "change": 8.18,
+              "industry": "증권"
+            }
+          ]
+        },
+        {
+          "name": "보험",
+          "children": [
+            {
+              "name": "KOSPI200",
+              "ticker": "032830",
+              "cap": 428000,
+              "change": 8.35,
+              "industry": "보험"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "000810",
+              "cap": 226145,
+              "change": 5.02,
+              "industry": "보험"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "005830",
+              "cap": 132246,
+              "change": 8.6,
+              "industry": "보험"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "088350",
+              "cap": 40647,
+              "change": 12.1,
+              "industry": "보험"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "001450",
+              "cap": 27446,
+              "change": 5.14,
+              "industry": "보험"
+            }
+          ]
+        },
+        {
+          "name": "다각화된금융",
+          "children": [
+            {
+              "name": "KOSPI200",
+              "ticker": "323410",
+              "cap": 114728,
+              "change": 8.33,
+              "industry": "카드와소비자금융"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "377300",
+              "cap": 80145,
+              "change": 13.38,
+              "industry": "카드와소비자금융"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "029780",
+              "cap": 68936,
+              "change": 3.84,
+              "industry": "카드와소비자금융"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "경기관련소비재",
+      "children": [
+        {
+          "name": "자동차와부품",
+          "children": [
+            {
+              "name": "KOSPI200",
+              "ticker": "005380",
+              "cap": 1122073,
+              "change": 9.38,
+              "industry": "자동차"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "000270",
+              "cap": 649647,
+              "change": 6.19,
+              "industry": "자동차"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "012330",
+              "cap": 391965,
+              "change": 8.27,
+              "industry": "자동차부품"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "161390",
+              "cap": 76431,
+              "change": 6.01,
+              "industry": "자동차부품"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "018880",
+              "cap": 40640,
+              "change": 7.61,
+              "industry": "자동차부품"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "204320",
+              "cap": 25310,
+              "change": 12.29,
+              "industry": "자동차부품"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "011210",
+              "cap": 24748,
+              "change": 16.07,
+              "industry": "자동차부품"
+            }
+          ]
+        },
+        {
+          "name": "미디어와엔터테인먼트",
+          "children": [
+            {
+              "name": "KOSPI200",
+              "ticker": "352820",
+              "cap": 147625,
+              "change": 4.89,
+              "industry": "엔터테인먼트"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "259960",
+              "cap": 104290,
+              "change": 4.27,
+              "industry": "게임"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "036570",
+              "cap": 44058,
+              "change": 4.55,
+              "industry": "게임"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "251270",
+              "cap": 39751,
+              "change": 6.01,
+              "industry": "게임"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "263750",
+              "cap": 35272,
+              "change": 1.67,
+              "industry": "게임"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "030000",
+              "cap": 23468,
+              "change": 3.08,
+              "industry": "광고"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "041510",
+              "cap": 22574,
+              "change": 2.82,
+              "industry": "엔터테인먼트"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "035900",
+              "cap": 21888,
+              "change": 6.02,
+              "industry": "엔터테인먼트"
+            },
+            {
+              "name": "KOSPI",
+              "ticker": "462870",
+              "cap": 17813,
+              "change": 7.09,
+              "industry": "게임"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "035760",
+              "cap": 14144,
+              "change": 5.91,
+              "industry": "엔터테인먼트"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "253450",
+              "cap": 11693,
+              "change": 3.73,
+              "industry": "엔터테인먼트"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "293490",
+              "cap": 11618,
+              "change": 6.85,
+              "industry": "게임"
+            },
+            {
+              "name": "KOSPI",
+              "ticker": "214320",
+              "cap": 7748,
+              "change": 4.31,
+              "industry": "광고"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "112040",
+              "cap": 7706,
+              "change": 8.1,
+              "industry": "게임"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "078340",
+              "cap": 3851,
+              "change": 6.52,
+              "industry": "게임"
+            }
+          ]
+        },
+        {
+          "name": "내구소비재와의류",
+          "children": [
+            {
+              "name": "KOSPI200",
+              "ticker": "035250",
+              "cap": 38146,
+              "change": 2.65,
+              "industry": "호텔과레저"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "383220",
+              "cap": 24325,
+              "change": 1.76,
+              "industry": "의류"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "008770",
+              "cap": 16818,
+              "change": 3.0,
+              "industry": "호텔과레저"
+            },
+            {
+              "name": "KOSPI",
+              "ticker": "039130",
+              "cap": 6568,
+              "change": 6.13,
+              "industry": "호텔과레저"
+            },
+            {
+              "name": "KOSPI",
+              "ticker": "105630",
+              "cap": 5228,
+              "change": 6.35,
+              "industry": "의류"
+            }
+          ]
+        },
+        {
+          "name": "소매유통",
+          "children": [
+            {
+              "name": "KOSPI200",
+              "ticker": "139480",
+              "cap": 25223,
+              "change": 3.04,
+              "industry": "백화점과일반상점"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "069960",
+              "cap": 20705,
+              "change": 1.1,
+              "industry": "백화점과일반상점"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "282330",
+              "cap": 19928,
+              "change": 3.04,
+              "industry": "백화점과일반상점"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "007070",
+              "cap": 15852,
+              "change": 1.61,
+              "industry": "백화점과일반상점"
+            },
+            {
+              "name": "KOSPI",
+              "ticker": "057050",
+              "cap": 9276,
+              "change": 3.76,
+              "industry": "인터넷소매"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "건강관리",
+      "children": [
+        {
+          "name": "제약과바이오",
+          "children": [
+            {
+              "name": "KOSPI200",
+              "ticker": "207940",
+              "cap": 762412,
+              "change": 8.64,
+              "industry": "바이오"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "068270",
+              "cap": 488667,
+              "change": 7.14,
+              "industry": "바이오"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "196170",
+              "cap": 199042,
+              "change": 12.05,
+              "industry": "바이오"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "000250",
+              "cap": 186721,
+              "change": 23.41,
+              "industry": "바이오"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "298380",
+              "cap": 97932,
+              "change": 15.83,
+              "industry": "바이오"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "326030",
+              "cap": 83482,
+              "change": 9.33,
+              "industry": "바이오"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "000100",
+              "cap": 78692,
+              "change": 6.93,
+              "industry": "제약"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "141080",
+              "cap": 69560,
+              "change": 17.36,
+              "industry": "바이오"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "128940",
+              "cap": 66489,
+              "change": 8.58,
+              "industry": "제약"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "087010",
+              "cap": 60742,
+              "change": 18.41,
+              "industry": "바이오"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "039200",
+              "cap": 19359,
+              "change": 8.82,
+              "industry": "바이오"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "069620",
+              "cap": 19234,
+              "change": 6.41,
+              "industry": "제약"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "006280",
+              "cap": 17483,
+              "change": 7.86,
+              "industry": "제약"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "195940",
+              "cap": 13853,
+              "change": 7.35,
+              "industry": "제약"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "185750",
+              "cap": 11732,
+              "change": 4.29,
+              "industry": "제약"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "086900",
+              "cap": 8809,
+              "change": 6.81,
+              "industry": "바이오"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "053030",
+              "cap": 4445,
+              "change": 6.08,
+              "industry": "바이오"
+            }
+          ]
+        },
+        {
+          "name": "건강관리장비",
+          "children": [
+            {
+              "name": "KOSDAQ",
+              "ticker": "041830",
+              "cap": 3990,
+              "change": 3.32,
+              "industry": "의료기기"
+            },
+            {
+              "name": "KOSDAQ",
+              "ticker": "039840",
+              "cap": 2444,
+              "change": 6.25,
+              "industry": "의료기기"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "소재",
+      "children": [
+        {
+          "name": "소재",
+          "children": [
+            {
+              "name": "KOSPI200",
+              "ticker": "010130",
+              "cap": 367156,
+              "change": 7.78,
+              "industry": "철강"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "005490",
+              "cap": 280433,
+              "change": 7.78,
+              "industry": "철강"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "086520",
+              "cap": 218328,
+              "change": 20.18,
+              "industry": "2차전지소재"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "247540",
+              "cap": 191151,
+              "change": 18.0,
+              "industry": "2차전지소재"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "003670",
+              "cap": 185008,
+              "change": 12.31,
+              "industry": "2차전지소재"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "002380",
+              "cap": 47898,
+              "change": 8.89,
+              "industry": "건설자재"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "004020",
+              "cap": 47774,
+              "change": 6.07,
+              "industry": "철강"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "066970",
+              "cap": 43093,
+              "change": 14.81,
+              "industry": "2차전지소재"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "103140",
+              "cap": 33181,
+              "change": 5.62,
+              "industry": "철강"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "001430",
+              "cap": 21876,
+              "change": 4.27,
+              "industry": "철강"
+            },
+            {
+              "name": "KOSPI",
+              "ticker": "020150",
+              "cap": 19506,
+              "change": 12.03,
+              "industry": "비철금속"
+            },
+            {
+              "name": "KOSPI",
+              "ticker": "005070",
+              "cap": 15947,
+              "change": 15.41,
+              "industry": "2차전지소재"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "000670",
+              "cap": 10033,
+              "change": 4.91,
+              "industry": "비철금속"
+            },
+            {
+              "name": "KSQ150",
+              "ticker": "278280",
+              "cap": 5471,
+              "change": 13.09,
+              "industry": "2차전지소재"
+            }
+          ]
+        },
+        {
+          "name": "화학",
+          "children": [
+            {
+              "name": "KOSPI200",
+              "ticker": "051910",
+              "cap": 229072,
+              "change": 5.7,
+              "industry": "화학"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "009830",
+              "cap": 76320,
+              "change": 11.14,
+              "industry": "화학"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "011790",
+              "cap": 37565,
+              "change": 12.73,
+              "industry": "화학"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "011780",
+              "cap": 31759,
+              "change": 1.08,
+              "industry": "화학"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "011170",
+              "cap": 31226,
+              "change": 1.67,
+              "industry": "화학"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "010060",
+              "cap": 24514,
+              "change": 8.87,
+              "industry": "화학"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "298050",
+              "cap": 9363,
+              "change": 7.01,
+              "industry": "화학"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "093370",
+              "cap": 7572,
+              "change": 12.6,
+              "industry": "화학"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "커뮤니케이션서비스",
+      "children": [
+        {
+          "name": "인터넷서비스",
+          "children": [
+            {
+              "name": "KOSPI200",
+              "ticker": "402340",
+              "cap": 747613,
+              "change": 11.64,
+              "industry": "인터넷"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "035420",
+              "cap": 345076,
+              "change": 5.77,
+              "industry": "인터넷"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "035720",
+              "cap": 226614,
+              "change": 8.82,
+              "industry": "인터넷"
+            }
+          ]
+        },
+        {
+          "name": "통신서비스",
+          "children": [
+            {
+              "name": "KOSPI200",
+              "ticker": "017670",
+              "cap": 167321,
+              "change": 10.81,
+              "industry": "유무선통신"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "030200",
+              "cap": 145669,
+              "change": 5.28,
+              "industry": "유무선통신"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "032640",
+              "cap": 64517,
+              "change": 2.95,
+              "industry": "유무선통신"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "부동산",
+      "children": [
+        {
+          "name": "부동산",
+          "children": [
+            {
+              "name": "KOSPI200",
+              "ticker": "028260",
+              "cap": 498031,
+              "change": 7.72,
+              "industry": "리츠"
+            },
+            {
+              "name": "KOSPI",
+              "ticker": "088980",
+              "cap": 54406,
+              "change": 2.25,
+              "industry": "리츠"
+            },
+            {
+              "name": "KOSPI",
+              "ticker": "395400",
+              "cap": 17218,
+              "change": 5.15,
+              "industry": "리츠"
+            },
+            {
+              "name": "KOSPI",
+              "ticker": "365550",
+              "cap": 10397,
+              "change": 2.92,
+              "industry": "리츠"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "필수소비재",
+      "children": [
+        {
+          "name": "식품과음료",
+          "children": [
+            {
+              "name": "KOSPI200",
+              "ticker": "003230",
+              "cap": 79850,
+              "change": 1.92,
+              "industry": "식품"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "271560",
+              "cap": 49064,
+              "change": 0.4,
+              "industry": "식품"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "097950",
+              "cap": 29672,
+              "change": 3.57,
+              "industry": "식품"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "004370",
+              "cap": 24148,
+              "change": 2.58,
+              "industry": "식품"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "000080",
+              "cap": 11719,
+              "change": 2.64,
+              "industry": "음료"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "005300",
+              "cap": 11626,
+              "change": 3.55,
+              "industry": "음료"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "001680",
+              "cap": 7224,
+              "change": 2.21,
+              "industry": "식품"
+            }
+          ]
+        },
+        {
+          "name": "담배",
+          "children": [
+            {
+              "name": "KOSPI200",
+              "ticker": "033780",
+              "cap": 184751,
+              "change": 3.3,
+              "industry": "담배"
+            }
+          ]
+        },
+        {
+          "name": "생활용품",
+          "children": [
+            {
+              "name": "KOSPI200",
+              "ticker": "090430",
+              "cap": 76158,
+              "change": 3.83,
+              "industry": "화장품"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "051900",
+              "cap": 36037,
+              "change": 4.67,
+              "industry": "화장품"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "002790",
+              "cap": 21454,
+              "change": 5.88,
+              "industry": "화장품"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "192820",
+              "cap": 18965,
+              "change": 3.98,
+              "industry": "화장품"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "161890",
+              "cap": 16335,
+              "change": 7.79,
+              "industry": "화장품"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "유틸리티",
+      "children": [
+        {
+          "name": "유틸리티",
+          "children": [
+            {
+              "name": "KOSPI200",
+              "ticker": "015760",
+              "cap": 309427,
+              "change": 5.82,
+              "industry": "전기유틸리티"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "052690",
+              "cap": 55878,
+              "change": 10.01,
+              "industry": "전기유틸리티"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "036460",
+              "cap": 34248,
+              "change": 2.63,
+              "industry": "전기유틸리티"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "051600",
+              "cap": 24570,
+              "change": 6.64,
+              "industry": "전기유틸리티"
+            },
+            {
+              "name": "KOSPI",
+              "ticker": "018670",
+              "cap": 22004,
+              "change": 9.43,
+              "industry": "가스유틸리티"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "에너지",
+      "children": [
+        {
+          "name": "에너지",
+          "children": [
+            {
+              "name": "KOSPI200",
+              "ticker": "096770",
+              "cap": 213852,
+              "change": 16.06,
+              "industry": "석유와가스"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "010950",
+              "cap": 151649,
+              "change": 6.48,
+              "industry": "석유와가스"
+            },
+            {
+              "name": "KOSPI200",
+              "ticker": "078930",
+              "cap": 61882,
+              "change": 8.47,
+              "industry": "석유와가스"
+            },
+            {
+              "name": "KOSPI",
+              "ticker": "017940",
+              "cap": 6812,
+              "change": 6.77,
+              "industry": "석유와가스"
+            },
+            {
+              "name": "KOSPI",
+              "ticker": "145720",
+              "cap": 5168,
+              "change": 14.29,
+              "industry": "석유와가스"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

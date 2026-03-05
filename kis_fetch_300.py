@@ -475,7 +475,7 @@ def main():
     # 4. 히트맵 JSON 생성
     heatmap = build_heatmap_json(stocks)
 
-    output_file = "krx_heatmap_data.json"
+    output_file = "public/krx_heatmap_data.json"
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump(heatmap, f, ensure_ascii=False, indent=2)
 

@@ -1,39 +1,36 @@
-# Project Blueprint: Korean Lotto Number Generator
+# Project Blueprint: KRX Market Map
 
 ## Overview
-
-This project is a simple web application that generates and displays a set of 6 random numbers for the Korean Lotto 6/45.
+A Finviz-style interactive heatmap for the Korean Stock Exchange (KRX), providing real-time market visualization using WICS (Wise Industry Classification Standard) categories.
 
 ## Features
+- **WICS 3-Level Hierarchy:** Sector (대분류) → Industry Group (중분류) → Stock (종목).
+- **Market Cap Weighted:** Tile sizes represent relative market capitalization.
+- **Color-Coded Performance:** 6-level gradient for both gains (Red/Pink) and losses (Blue/Cyan).
+- **Interactive UI:**
+  - Hover tooltips with detailed stock metadata.
+  - Sector-level filtering via navigation buttons.
+  - Nested industry group overview on hover.
+  - 3-minute auto-refresh with manual refresh capability.
+- **Real-time Data:** Integrated with Korea Investment Service (KIS) Open API.
 
-*   **Number Generation:** Generates 6 unique random numbers between 1 and 45.
-*   **Color-Coded Display:** Displays numbers with their official lottery color ranges:
-    *   1-10: Yellow
-    *   11-20: Blue
-    *   21-30: Red
-    *   31-40: Gray
-    *   41-45: Green
-*   **Theme Management:** Includes a Dark/Light mode toggle that persists in local storage.
-*   **Partnership Inquiry Form:** A simple contact form powered by Formspree to receive business inquiries and suggestions.
-*   **Comment System:** Disqus-powered comment and feedback section to engage with users.
-*   **Responsive Design:** Optimized for both desktop and mobile viewing.
+## Tech Stack
+- **Frontend:** Next.js (App Router), React, D3.js, Lucide React.
+- **Data Engine:** Python (KIS API Client).
+- **Styling:** Vanilla CSS-in-JS (React Inline Styles).
+- **Deployment:** Cloudflare Pages (Planned).
 
-## Design
-
-*   **Layout:** A clean, centered layout with a title, a button, and a display area for the numbers.
-*   **Styling:** Modern and visually appealing design with CSS variables, smooth transitions, and hover effects.
-*   **Interactivity:** Smooth button interactions and hover scaling on lotto numbers.
-
-## Implemented Features
-
-1.  **`index.html` Update:** Added a theme toggle button and structured the layout for responsiveness.
-2.  **`style.css` Refactor:** Implemented CSS variables and dark mode styles for easier maintenance.
-3.  **`main.js` Core Logic:** 
-    *   Added `generateLottoNumbers` to provide sorted, unique numbers.
-    *   Implemented `setTheme` and `localStorage` integration for persistent theme selection.
-    *   Created dynamic number range styling in `displayNumbers`.
-4.  **Code Quality:** Added detailed comments to all files for clarity and maintainability.
+## Implemented Steps
+1. **KIS API Integration:** Created `kis_fetch_300.py` to fetch top 300 stocks and map them to WICS.
+2. **Next.js Scaffolding:** Initialized a new Next.js project and integrated React/D3 components.
+3. **Data Pipeline:** 
+   - Refactored Python script to use `.env` for security.
+   - Set up `krx_heatmap_data.json` generation and client-side fetching.
+4. **Heatmap Component:**
+   - Implemented D3 Squarified Treemap layout.
+   - Custom padding logic for nested hierarchies (SH/MH levels).
+   - Dynamic color interpolation based on change percentage.
 
 ## Current Plan
-
-1.  **Deployment:** Push the latest features (Dark Mode & Color Coding) to the GitHub repository.
+1. **Cloudflare Deployment:** Configure build settings for Cloudflare Pages.
+2. **Automated Data Updates:** Set up a cron job or worker to run `kis_fetch_300.py` periodically.
