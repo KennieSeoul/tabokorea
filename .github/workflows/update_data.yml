@@ -7,13 +7,16 @@ on:
     - cron: '*/10 0-6 * * 1-5'
   workflow_dispatch: # 수동 실행 버튼
 
+permissions:
+  contents: write # 봇이 파일 수정 후 푸시할 수 있는 권한 추가
+
 jobs:
   update-data:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
+...
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
