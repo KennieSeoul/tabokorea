@@ -333,7 +333,23 @@ export default function KRXHeatmap() {
           </div>
           <div style={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
             {[null, ...data.children.map(c => c.name)].map(s => (
-              <button key={s || "a"} onClick={() => setSec(sec === s ? null : s)} style={{ padding: "3px 8px", fontSize: 10, fontWeight: 700, borderRadius: 4, cursor: "pointer", background: (s === null ? !sec : sec === s) ? "rgba(255,255,255,0.12)" : "transparent", color: (s === null ? !sec : sec === s) ? "#fff" : "rgba(255,255,255,0.25)", border: (s === null ? !sec : sec === s) ? "1px solid rgba(255,255,255,0.15)" : "1px solid transparent" }}>{s || "전체"}</button>
+              <button 
+                key={s || "a"} 
+                onClick={() => setSec(sec === s ? null : s)} 
+                style={{ 
+                  padding: "3px 8px", 
+                  fontSize: 10, 
+                  fontWeight: 700, 
+                  borderRadius: 4, 
+                  cursor: "pointer", 
+                  background: (s === null ? !sec : sec === s) ? "rgba(255,255,255,0.18)" : "rgba(255,255,255,0.05)", 
+                  color: (s === null ? !sec : sec === s) ? "#fff" : "rgba(255,255,255,0.55)", 
+                  border: (s === null ? !sec : sec === s) ? "1px solid rgba(255,255,255,0.3)" : "1px solid rgba(255,255,255,0.1)",
+                  transition: "all 0.2s"
+                }}
+              >
+                {s || "전체"}
+              </button>
             ))}
           </div>
         </div>
