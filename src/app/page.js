@@ -4,26 +4,26 @@ import { useState, useEffect, useRef, useMemo, useCallback } from "react";
 import * as d3 from "d3";
 import { RefreshCcw, TrendingUp, TrendingDown, Minus, Info } from "lucide-react";
 
-// ═══════ COLOR CONFIG ═══════
+// ═══════ COLOR CONFIG (Dark Mode) ═══════
 const UP = [
-  { at: 0.3, r: 255, g: 235, b: 235 },
-  { at: 1, r: 255, g: 200, b: 200 },
-  { at: 3, r: 255, g: 120, b: 120 },
-  { at: 5, r: 245, g: 60, b: 60 },
-  { at: 10, r: 220, g: 20, b: 20 },
-  { at: 15, r: 180, g: 0, b: 0 },
-  { at: 29, r: 130, g: 0, b: 0 },
+  { at: 0.3, r: 80, g: 38, b: 38 },
+  { at: 1, r: 145, g: 28, b: 25 },
+  { at: 3, r: 205, g: 22, b: 18 },
+  { at: 5, r: 245, g: 42, b: 32 },
+  { at: 10, r: 255, g: 65, b: 55 },
+  { at: 15, r: 255, g: 90, b: 105 },
+  { at: 29, r: 255, g: 115, b: 185 },
 ];
 const DN = [
-  { at: 0.3, r: 235, g: 245, b: 255 },
-  { at: 1, r: 200, g: 225, b: 255 },
-  { at: 3, r: 120, g: 180, b: 255 },
-  { at: 5, r: 60, g: 130, b: 250 },
-  { at: 10, r: 20, g: 80, b: 220 },
-  { at: 15, r: 0, g: 50, b: 180 },
-  { at: 29, r: 0, g: 30, b: 130 },
+  { at: 0.3, r: 38, g: 40, b: 80 },
+  { at: 1, r: 28, g: 42, b: 140 },
+  { at: 3, r: 22, g: 58, b: 195 },
+  { at: 5, r: 32, g: 85, b: 240 },
+  { at: 10, r: 55, g: 125, b: 255 },
+  { at: 15, r: 75, g: 175, b: 255 },
+  { at: 29, r: 85, g: 225, b: 255 },
 ];
-const NE = { r: 242, g: 242, b: 247 };
+const NE = { r: 38, g: 38, b: 44 };
 
 const lrp = (a, b, t) => {
   const T = Math.max(0, Math.min(1, t));
@@ -52,20 +52,25 @@ const gc = (ch) => {
 const gcD = (ch, d) => {
   const a = Math.abs(ch);
   if (a < 0.15) {
-    const v = Math.round(220 * d);
-    return `rgb(${v},${v},${v})`;
+    const v = Math.round(NE.r * d);
+    return `rgb(${v},${v},${Math.round(NE.b * d)})`;
   }
   const c = cfs(a, ch > 0 ? UP : DN);
   return `rgb(${Math.round(c.r * d)},${Math.round(c.g * d)},${Math.round(c.b * d)})`;
 };
 
-const glw = (ch) => "none";
+const glw = (ch) => {
+  const a = Math.abs(ch);
+  if (a < 3) return "none";
+  const i = Math.min(10, (a - 3) / 2.5);
+  return `drop-shadow(0 0 ${i}px ${
+    ch > 0 ? `rgba(255,80,100,${(0.06 * i).toFixed(2)})` : `rgba(80,180,255,${(0.06 * i).toFixed(2)})`
+  })`;
+};
 
 const txt = (ch, m = 1) => {
   const a = Math.abs(ch);
-  // 등락폭이 크면 배경색이 진하므로 화이트 텍스트, 작으면 블랙 텍스트
-  if (a > 3) return `rgba(255,255,255,${m})`;
-  return `rgba(0,0,0,${0.85 * m})`;
+  return `rgba(255,255,255,${(a < 0.5 ? 0.5 : a < 3 ? 0.78 : a < 10 ? 0.9 : 1) * m})`;
 };
 
 function avg(n) {
@@ -103,12 +108,12 @@ const DD = ({ node, x, y, cR }) => {
         left: l,
         top: t,
         width: w,
-        background: "rgba(255,255,255,0.98)",
-        border: "1px solid rgba(0,0,0,0.1)",
+        background: "rgba(12,12,18,0.98)",
+        border: "1px solid rgba(255,255,255,0.1)",
         borderRadius: 6,
         pointerEvents: "none",
         zIndex: 2000,
-        boxShadow: "0 8px 32px rgba(0,0,0,0.12)",
+        boxShadow: "0 8px 32px rgba(0,0,0,0.7)",
         backdropFilter: "blur(12px)",
         overflow: "hidden",
       }}
@@ -116,16 +121,16 @@ const DD = ({ node, x, y, cR }) => {
       <div
         style={{
           padding: "5px 10px",
-          borderBottom: "1px solid rgba(0,0,0,0.06)",
+          borderBottom: "1px solid rgba(255,255,255,0.06)",
           display: "flex",
           justifyContent: "space-between",
-          background: gcD(av, 0.95),
+          background: gcD(av, 0.35),
         }}
       >
-        <span style={{ color: av > 3 ? "#fff" : "#111", fontSize: isMobile ? 9 : 11, fontWeight: 800 }}>{node.data.name}</span>
+        <span style={{ color: "#fff", fontSize: isMobile ? 9 : 11, fontWeight: 800 }}>{node.data.name}</span>
         <span
           style={{
-            color: av > 0 ? "#d00" : av < 0 ? "#00d" : "#666",
+            color: av > 0 ? "#ff6b6b" : av < 0 ? "#70aaff" : "#888",
             fontSize: isMobile ? 9 : 11,
             fontWeight: 800,
             fontFamily: "monospace",
@@ -137,9 +142,9 @@ const DD = ({ node, x, y, cR }) => {
       {lvs.map((l, i) => {
         const ch = l.data.change;
         return (
-          <div key={i} style={{ padding: "2px 10px", display: "flex", alignItems: "center", borderBottom: i < lvs.length - 1 ? "1px solid rgba(0,0,0,0.03)" : "none" }}>
-            <span style={{ color: "#333", fontSize: isMobile ? 8 : 10, fontWeight: 600, flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{l.data.name}</span>
-            <span style={{ color: ch > 0 ? "#d00" : ch < 0 ? "#00d" : "#666", fontSize: isMobile ? 8 : 10, fontWeight: 700, fontFamily: "monospace", width: isMobile ? 40 : 52, textAlign: "right" }}>{ch > 0 ? "+" : ""}{ch.toFixed(2)}%</span>
+          <div key={i} style={{ padding: "2px 10px", display: "flex", alignItems: "center", borderBottom: i < lvs.length - 1 ? "1px solid rgba(255,255,255,0.03)" : "none" }}>
+            <span style={{ color: "rgba(255,255,255,0.7)", fontSize: isMobile ? 8 : 10, fontWeight: 600, flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{l.data.name}</span>
+            <span style={{ color: ch > 0 ? "#ff6b6b" : ch < 0 ? "#70aaff" : "#888", fontSize: isMobile ? 8 : 10, fontWeight: 700, fontFamily: "monospace", width: isMobile ? 40 : 52, textAlign: "right" }}>{ch > 0 ? "+" : ""}{ch.toFixed(2)}%</span>
           </div>
         );
       })}
@@ -170,28 +175,28 @@ const Tip = ({ d, x, y, cR }) => {
         position: "absolute",
         left: l,
         top: t,
-        background: "rgba(255,255,255,0.97)",
-        border: `1px solid ${ch > 0 ? "rgba(200,0,0,0.2)" : ch < 0 ? "rgba(0,0,200,0.2)" : "rgba(0,0,0,0.1)"}`,
+        background: "rgba(6,6,12,0.97)",
+        border: `1px solid ${ch > 0 ? "rgba(255,70,70,0.25)" : ch < 0 ? "rgba(70,130,255,0.25)" : "rgba(255,255,255,0.06)"}`,
         borderRadius: 8,
         padding: isMobile ? "8px 10px" : "10px 14px",
         pointerEvents: "none",
         zIndex: 3000,
         minWidth: w,
         backdropFilter: "blur(14px)",
-        boxShadow: "0 12px 40px rgba(0,0,0,0.15)",
+        boxShadow: "0 12px 40px rgba(0,0,0,0.7)",
       }}
     >
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 8 }}>
         <div>
-          <div style={{ color: "#111", fontWeight: 800, fontSize: isMobile ? 12 : 14 }}>{d.data.name}</div>
-          <div style={{ color: "#666", fontSize: 9, marginTop: 2, fontFamily: "monospace" }}>{d.data.ticker}</div>
+          <div style={{ color: "#fff", fontWeight: 800, fontSize: isMobile ? 12 : 14 }}>{d.data.name}</div>
+          <div style={{ color: "rgba(255,255,255,0.3)", fontSize: 9, marginTop: 2, fontFamily: "monospace" }}>{d.data.ticker}</div>
         </div>
         <div
           style={{
             padding: "3px 8px",
             borderRadius: 5,
-            background: ch > 0 ? "rgba(255,0,0,0.05)" : ch < 0 ? "rgba(0,0,255,0.05)" : "#f0f0f0",
-            color: ch > 0 ? "#d00" : ch < 0 ? "#00d" : "#666",
+            background: ch > 0 ? "rgba(255,40,60,0.15)" : ch < 0 ? "rgba(40,80,255,0.15)" : "rgba(255,255,255,0.06)",
+            color: ch > 0 ? (a > 10 ? "#ff6eaa" : "#ff5555") : a > 10 ? "#60ddff" : "#5090ff",
             fontSize: isMobile ? 11 : 14,
             fontWeight: 900,
             fontFamily: "monospace",
@@ -200,11 +205,11 @@ const Tip = ({ d, x, y, cR }) => {
           {ch > 0 ? "▲" : ch < 0 ? "▼" : "−"} {a.toFixed(2)}%
         </div>
       </div>
-      <div style={{ borderTop: "1px solid rgba(0,0,0,0.05)", paddingTop: 7, display: "flex", flexDirection: "column", gap: 3, fontSize: isMobile ? 9 : 10.5 }}>
+      <div style={{ borderTop: "1px solid rgba(255,255,255,0.05)", paddingTop: 7, display: "flex", flexDirection: "column", gap: 3, fontSize: isMobile ? 9 : 10.5 }}>
         {[["시가총액", cap, true], ["대분류", sec], ["중분류", mid], ["소분류", ind]].map(([k, v, mono]) => (
           <div key={k} style={{ display: "flex", width: "100%" }}>
-            <span style={{ color: "#666", flex: 1 }}>{k}</span>
-            <span style={{ color: "#111", fontWeight: 600, textAlign: "right" }}>{v}</span>
+            <span style={{ color: "rgba(255,255,255,0.3)", flex: 1 }}>{k}</span>
+            <span style={{ color: mono ? "#fff" : "rgba(255,255,255,0.6)", fontWeight: mono ? 700 : 600, fontFamily: mono ? "monospace" : "inherit", textAlign: "right" }}>{v}</span>
           </div>
         ))}
       </div>
@@ -216,7 +221,7 @@ const Legend = () => {
   const v = [-29, -15, -10, -5, -3, -1, 0, 1, 3, 5, 10, 15, 29];
   return (
     <div style={{ display: "flex", alignItems: "center", flexShrink: 0, overflowX: "auto", maxWidth: "100%" }}>
-      <span style={{ fontSize: 8, color: "#00d", marginRight: 5, fontWeight: 800 }}>하락</span>
+      <span style={{ fontSize: 8, color: "#60ddff", marginRight: 5, fontWeight: 800 }}>하락</span>
       {v.map((val, i) => (
         <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
           <div
@@ -225,12 +230,12 @@ const Legend = () => {
               height: 10,
               background: gc(val),
               borderRadius: i === 0 ? "4px 0 0 4px" : i === v.length - 1 ? "0 4px 4px 0" : 0,
-              borderRight: i < v.length - 1 ? "1px solid rgba(255,255,255,0.3)" : "none",
+              borderRight: i < v.length - 1 ? "1px solid rgba(0,0,0,0.5)" : "none",
             }}
           />
         </div>
       ))}
-      <span style={{ fontSize: 8, color: "#d00", marginLeft: 5, fontWeight: 800 }}>상승</span>
+      <span style={{ fontSize: 8, color: "#ff6eaa", marginLeft: 5, fontWeight: 800 }}>상승</span>
     </div>
   );
 };
@@ -313,22 +318,22 @@ export default function KRXHeatmap() {
   }, []);
 
   if (loading) return (
-    <div style={{ width: "100%", height: "100vh", background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", color: "#ccc" }}>
+    <div style={{ width: "100%", height: "100vh", background: "#0a0a0e", display: "flex", alignItems: "center", justifyContent: "center", color: "rgba(255,255,255,0.2)" }}>
       <RefreshCcw className="animate-spin" size={32} />
     </div>
   );
 
   return (
-    <div style={{ width: "100%", height: "100vh", background: "#fdfdfd", display: "flex", flexDirection: "column", fontFamily: "-apple-system,BlinkMacSystemFont,'Malgun Gothic',sans-serif", overflow: "hidden" }}>
-      <div style={{ padding: "8px 12px", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid #eee", flexShrink: 0, flexWrap: "wrap", gap: 10 }}>
+    <div style={{ width: "100%", height: "100vh", background: "#0a0a0e", display: "flex", flexDirection: "column", fontFamily: "-apple-system,BlinkMacSystemFont,'Malgun Gothic',sans-serif", overflow: "hidden" }}>
+      <div style={{ padding: "8px 12px", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid rgba(255,255,255,0.04)", flexShrink: 0, flexWrap: "wrap", gap: 10 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
           <div style={{ display: "flex", alignItems: "baseline", gap: 4 }}>
-            <span style={{ fontSize: 16, fontWeight: 900, color: "#111" }}>KRX</span>
-            <span style={{ fontSize: 9, fontWeight: 600, color: "#999", letterSpacing: "1px" }}>WICS MAP</span>
+            <span style={{ fontSize: 16, fontWeight: 900, color: "#fff" }}>KRX</span>
+            <span style={{ fontSize: 9, fontWeight: 600, color: "rgba(255,255,255,0.18)", letterSpacing: "1px" }}>WICS MAP</span>
           </div>
           <div style={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
             {[null, ...data.children.map(c => c.name)].map(s => (
-              <button key={s || "a"} onClick={() => setSec(sec === s ? null : s)} style={{ padding: "3px 8px", fontSize: 10, fontWeight: 700, borderRadius: 4, cursor: "pointer", background: (s === null ? !sec : sec === s) ? "#111" : "#f0f0f0", color: (s === null ? !sec : sec === s) ? "#fff" : "#666", border: "1px solid transparent" }}>{s || "전체"}</button>
+              <button key={s || "a"} onClick={() => setSec(sec === s ? null : s)} style={{ padding: "3px 8px", fontSize: 10, fontWeight: 700, borderRadius: 4, cursor: "pointer", background: (s === null ? !sec : sec === s) ? "rgba(255,255,255,0.12)" : "transparent", color: (s === null ? !sec : sec === s) ? "#fff" : "rgba(255,255,255,0.25)", border: (s === null ? !sec : sec === s) ? "1px solid rgba(255,255,255,0.15)" : "1px solid transparent" }}>{s || "전체"}</button>
             ))}
           </div>
         </div>
@@ -342,18 +347,21 @@ export default function KRXHeatmap() {
             if (w < 40) return null;
             return (
               <g key={`s${i}`} onMouseEnter={() => { setDd(s); setDdP({ x: s.x0, y: s.y0 + SH }); }} onMouseLeave={() => setDd(null)}>
-                <rect x={s.x0} y={s.y0} width={w} height={h} fill="#f8f9fa" stroke="#ddd" strokeWidth={1} rx={2} />
-                <rect x={s.x0} y={s.y0} width={w} height={SH} fill="#eee" rx={2} />
-                <text x={s.x0 + 5} y={s.y0 + SH - 3.5} fill="#333" fontSize={10} fontWeight={800}>{s.data.name.substring(0, Math.floor(w/6))}</text>
+                <rect x={s.x0} y={s.y0} width={w} height={h} fill={gcD(av, 0.12)} stroke={gcD(av, 0.3)} strokeWidth={1} rx={2} />
+                <rect x={s.x0} y={s.y0} width={w} height={SH} fill={gcD(av, 0.4)} rx={2} />
+                <text x={s.x0 + 5} y={s.y0 + SH - 3.5} fill="#fff" fontSize={10} fontWeight={800}>{s.data.name.substring(0, Math.floor(w/6))}</text>
               </g>
             );
           })}
           {midN.map((m, i) => {
-            const w = m.x1 - m.x0, h = m.y1 - m.y0;
+            const av = avg(m), w = m.x1 - m.x0, h = m.y1 - m.y0;
             if (w < 20 || h < MH + 4) return null;
             return (
               <g key={`m${i}`} onMouseEnter={() => { setDd(m); setDdP({ x: m.x0, y: m.y0 + MH }); }} onMouseLeave={() => setDd(null)}>
-                <rect x={m.x0} y={m.y0} width={w} height={h} fill="transparent" stroke="rgba(0,0,0,0.05)" strokeWidth={0.5} rx={1} />
+                <rect x={m.x0} y={m.y0} width={w} height={h} fill="transparent" stroke="rgba(255,255,255,0.05)" strokeWidth={0.5} rx={1} />
+                {/* 중분류 텍스트 가독성 강화 */}
+                <rect x={m.x0} y={m.y0} width={w} height={MH} fill="rgba(255,255,255,0.08)" rx={1} />
+                <text x={m.x0 + 3} y={m.y0 + MH - 2.5} fill="rgba(255,255,255,0.7)" fontSize={8.5} fontWeight={800}>{m.data.name.substring(0, Math.floor(w/7))}</text>
               </g>
             );
           })}
@@ -366,7 +374,7 @@ export default function KRXHeatmap() {
             const showChange = w > 35 && h > 25;
             return (
               <g key={`t${i}`} onMouseEnter={() => { setHov(i); setTip(leaf); setDd(null); }} onMouseLeave={() => { setHov(null); setTip(null); }} onClick={() => setTip(leaf)} style={{ cursor: "pointer" }}>
-                <rect x={leaf.x0} y={leaf.y0} width={w} height={h} fill={gc(ch)} stroke={isH ? "#000" : "rgba(255,255,255,0.4)"} strokeWidth={isH ? 1.5 : 0.5} rx={1} />
+                <rect x={leaf.x0} y={leaf.y0} width={w} height={h} fill={gc(ch)} stroke={isH ? "#fff" : "rgba(0,0,0,0.2)"} strokeWidth={isH ? 1.5 : 0.3} rx={1} style={{ filter: glw(ch) }} />
                 {showName && (
                   <text x={leaf.x0 + w/2} y={leaf.y0 + h/2 + (showChange ? -2 : 4)} textAnchor="middle" fill={txt(ch)} fontSize={fontSize} fontWeight={800} style={{ pointerEvents: "none" }}>
                     {w < 40 ? leaf.data.name.substring(0, 2) : leaf.data.name.substring(0, Math.floor(w/8))}
@@ -385,22 +393,22 @@ export default function KRXHeatmap() {
         <Tip d={tip} x={mouse.x} y={mouse.y} cR={dims} />
       </div>
 
-      <div style={{ padding: "6px 12px", borderTop: "1px solid #eee", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 6 }}>
+      <div style={{ padding: "6px 12px", borderTop: "1px solid rgba(255,255,255,0.03)", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 6 }}>
         <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
           {(() => {
             const up = leaves.filter(l => l.data.change > 0.3).length, dn = leaves.filter(l => l.data.change < -0.3).length, fl = leaves.length - up - dn;
             return (
               <>
-                <div style={{ display: "flex", gap: 3, alignItems: "center" }}><TrendingUp size={12} color="#d00" /><span style={{ fontSize: 10, color: "#d00", fontWeight: 700 }}>{up}</span></div>
-                <div style={{ display: "flex", gap: 3, alignItems: "center" }}><TrendingDown size={12} color="#00d" /><span style={{ fontSize: 10, color: "#00d", fontWeight: 700 }}>{dn}</span></div>
-                <div style={{ display: "flex", gap: 3, alignItems: "center" }}><Minus size={12} color="#666" /><span style={{ fontSize: 10, color: "#666", fontWeight: 700 }}>{fl}</span></div>
+                <div style={{ display: "flex", gap: 3, alignItems: "center" }}><TrendingUp size={12} color="#ff5050" /><span style={{ fontSize: 10, color: "#ff6b6b", fontWeight: 700 }}>{up}</span></div>
+                <div style={{ display: "flex", gap: 3, alignItems: "center" }}><TrendingDown size={12} color="#4488ff" /><span style={{ fontSize: 10, color: "#70aaff", fontWeight: 700 }}>{dn}</span></div>
+                <div style={{ display: "flex", gap: 3, alignItems: "center" }}><Minus size={12} color="#888" /><span style={{ fontSize: 10, color: "#aaa", fontWeight: 700 }}>{fl}</span></div>
               </>
             );
           })()}
         </div>
         <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-          <span style={{ fontSize: 9, color: "#999", fontFamily: "monospace" }}>{lastUpdated.split(" ")[1]} 갱신</span>
-          <button onClick={fetchData} style={{ background: "none", border: "none", color: "#999", cursor: "pointer" }}><RefreshCcw size={12} /></button>
+          <span style={{ fontSize: 9, color: "rgba(255,255,255,0.2)", fontFamily: "monospace" }}>{lastUpdated.split(" ")[1]} 갱신</span>
+          <button onClick={fetchData} style={{ background: "none", border: "none", color: "rgba(255,255,255,0.3)", cursor: "pointer" }}><RefreshCcw size={12} /></button>
         </div>
       </div>
     </div>
