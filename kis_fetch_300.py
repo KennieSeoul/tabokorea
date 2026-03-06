@@ -323,7 +323,7 @@ def get_price(token, code):
         if cap_억 == 0:
             return None
         return {
-            "name": o.get("rprs_mrkt_kor_name", "").strip() or o.get("hts_kor_isnm", "").strip(),
+            "name": o.get("hts_kor_isnm", "").strip() or o.get("rprs_mrkt_kor_name", "").strip(),
             "ticker": code,
             "price": int(o.get("stck_prpr", 0)),
             "change": float(o.get("prdy_ctrt", 0)),

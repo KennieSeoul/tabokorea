@@ -1,0 +1,40 @@
+name: Update KRX Market Data
+
+on:
+  schedule:
+    # 한국 시간(UTC+9) 기준 평일 09:00 ~ 15:40이 장 시간입니다.
+    # UTC 기준: 월~금 00:00 ~ 06:40 (매 10분마다)
+    - cron: '*/10 0-6 * * 1-5'
+  workflow_dispatch: # 수동 실행 버튼
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests python-dotenv
+
+      - name: Run data fetcher
+        env:
+          KIS_APP_KEY: ${{ secrets.KIS_APP_KEY }}
+          KIS_APP_SECRET: ${{ secrets.KIS_APP_SECRET }}
+          KIS_ACCOUNT_NO: ${{ secrets.KIS_ACCOUNT_NO }}
+          KIS_ACCOUNT_CD: ${{ secrets.KIS_ACCOUNT_CD }}
+        run: python kis_fetch_300.py
+
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add public/krx_heatmap_data.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "data: update KRX heatmap data [skip ci]" && git push)
