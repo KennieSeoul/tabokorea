@@ -1,36 +1,38 @@
-# Project Blueprint: KRX Market Map
+# 📊 KRX Market Map - Project Blueprint
 
-## Overview
-A Finviz-style interactive heatmap for the Korean Stock Exchange (KRX), providing real-time market visualization using WICS (Wise Industry Classification Standard) categories.
+## 🌟 프로젝트 개요
+한국 시장(KRX)의 시가총액 상위 종목들을 한눈에 파악할 수 있는 Finviz 스타일의 실시간 히트맵 서비스입니다. WICS 분류 체계를 따르며, 데이터의 실시간성과 시스템의 안정성을 동시에 확보한 아키텍처를 지향합니다.
 
-## Features
-- **WICS 3-Level Hierarchy:** Sector (대분류) → Industry Group (중분류) → Stock (종목).
-- **Market Cap Weighted:** Tile sizes represent relative market capitalization.
-- **Color-Coded Performance:** 6-level gradient for both gains (Red/Pink) and losses (Blue/Cyan).
-- **Interactive UI:**
-  - Hover tooltips with detailed stock metadata.
-  - Sector-level filtering via navigation buttons.
-  - Nested industry group overview on hover.
-  - 3-minute auto-refresh with manual refresh capability.
-- **Real-time Data:** Integrated with Korea Investment Service (KIS) Open API.
+## 🚀 2026-03-06 (금) 주요 성과 및 변경 사항
 
-## Tech Stack
-- **Frontend:** Next.js (App Router), React, D3.js, Lucide React.
-- **Data Engine:** Python (KIS API Client).
-- **Styling:** Vanilla CSS-in-JS (React Inline Styles).
-- **Deployment:** Cloudflare Pages (Planned).
+### 1. 아키텍처 혁신: GitHub Actions → Cloudflare Worker + KV
+*   **배경:** GitHub Actions에서 10분마다 실행되던 기존 방식이 매번 증권사 토큰을 새로 발급받아 계정 정지 리스크 발생.
+*   **해결:** Cloudflare Worker(`krx-api`)와 KV Store(`KRX_KV`) 기반으로 엔진 이전.
+*   **상세 구조:**
+    *   **토큰 캐싱:** KV Store를 활용해 `access_token`을 23시간 동안 보관하여 증권사 권고 사항(1일 1회 발급) 완벽 준수.
+    *   **주기적 수집:** Worker에 Cron Trigger를 설정하여 5분마다 시장 데이터 갱신.
+    *   **API 엔드포인트:** 프론트엔드가 직접 Worker(`/api/heatmap`)를 호출하여 초고속 데이터 로딩 구현.
 
-## Implemented Steps
-1. **KIS API Integration:** Created `kis_fetch_300.py` to fetch top 300 stocks and map them to WICS.
-2. **Next.js Scaffolding:** Initialized a new Next.js project and integrated React/D3 components.
-3. **Data Pipeline:** 
-   - Refactored Python script to use `.env` for security.
-   - Set up `krx_heatmap_data.json` generation and client-side fetching.
-4. **Heatmap Component:**
-   - Implemented D3 Squarified Treemap layout.
-   - Custom padding logic for nested hierarchies (SH/MH levels).
-   - Dynamic color interpolation based on change percentage.
+### 2. 데이터 무결성: 종목명 표시 오류 수정
+*   **문제:** 모든 종목이 'KOSPI200'으로 표시되는 현상 발생.
+*   **수정:** `kis_fetch_300.py` 및 Worker 코드 내 `WICS_MAP`에 **한글 종목명 매핑 테이블**을 직접 구축.
+*   **결과:** 삼성전자, SK하이닉스 등 정확한 이름이 히트맵에 노출됨.
 
-## Current Plan
-1. **Cloudflare Deployment:** Configure build settings for Cloudflare Pages.
-2. **Automated Data Updates:** Set up a cron job or worker to run `kis_fetch_300.py` periodically.
+### 3. 반응형 UI/UX 고도화 (iPhone 최적화)
+*   **동적 높이:** `100dvh` 단위를 적용하여 아이폰 사파리/크롬의 주소창 변화에도 화면 잘림 없이 꽉 찬 레이아웃 제공.
+*   **텍스트 엔진:** 화면 크기에 따라 종목명 자동 축약 로직 강화 (예: 삼성전자 → 삼성).
+*   **가독성 개선:** 중분류(WICS 2단계) 바의 배경색과 글씨 색상을 조정하여 가계 구분을 명확히 함.
+*   **상단 탭:** 필터 버튼의 텍스트 밝기를 높여 비활성 상태에서도 가독성 확보.
+
+## 🛠️ 현재 시스템 상태
+*   **프론트엔드:** `tabokorea.pages.dev` (Next.js, 배포 완료)
+*   **백엔드:** `krx-api.divine-cherry-0477.workers.dev` (Cloudflare Worker, 정상 작동)
+*   **데이터:** 상위 51개 핵심 종목 중심 (시총 비중 고려 최적화)
+
+## 🔮 향후 과제 (Next Steps)
+1.  **다국어 지원 (i18n):** 영문/한글 드롭다운 메뉴 추가 및 데이터 매핑 구조 확장 검토.
+2.  **종목 확장:** 현재 51개에서 100개 수준으로의 확장성 테스트 (가독성 체크 필요).
+3.  **수집 주기 조정:** 5분에서 3분으로 단축 시 증권사 안정성 재검토.
+
+---
+**💡 주말 작업 안내:** 맥북프로에서 이 파일을 읽은 후, Cloudflare Worker의 수동 트리거를 통해 데이터가 KV에 잘 쌓여있는지 먼저 확인하고 작업을 이어가세요.
