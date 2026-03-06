@@ -90,7 +90,7 @@ const DD = ({ node, x, y, cR }) => {
     .sort((a, b) => b.data.cap - a.data.cap)
     .slice(0, isMobile ? 5 : 8);
   const av = avg(node);
-  const w = isMobile ? 200 : 260;
+  const w = isMobile ? 180 : 260;
   const h = 30 + lvs.length * 22 + 4;
   
   let l = x, t = y + 2;
@@ -155,8 +155,8 @@ const DD = ({ node, x, y, cR }) => {
 const Tip = ({ d, x, y, cR }) => {
   if (!d) return null;
   const isMobile = cR.w < 600;
-  const w = isMobile ? 180 : 240;
-  const h = isMobile ? 120 : 150;
+  const w = isMobile ? 160 : 240;
+  const h = isMobile ? 110 : 150;
   
   let l = x + 14, t = y + 14;
   if (cR) {
@@ -178,7 +178,7 @@ const Tip = ({ d, x, y, cR }) => {
         background: "rgba(6,6,12,0.97)",
         border: `1px solid ${ch > 0 ? "rgba(255,70,70,0.25)" : ch < 0 ? "rgba(70,130,255,0.25)" : "rgba(255,255,255,0.06)"}`,
         borderRadius: 8,
-        padding: isMobile ? "8px 10px" : "10px 14px",
+        padding: isMobile ? "6px 8px" : "10px 14px",
         pointerEvents: "none",
         zIndex: 3000,
         minWidth: w,
@@ -186,17 +186,17 @@ const Tip = ({ d, x, y, cR }) => {
         boxShadow: "0 12px 40px rgba(0,0,0,0.7)",
       }}
     >
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 8 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 6 }}>
         <div>
-          <div style={{ color: "#fff", fontWeight: 800, fontSize: isMobile ? 12 : 14 }}>{d.data.name}</div>
-          <div style={{ color: "rgba(255,255,255,0.3)", fontSize: 9, marginTop: 2, fontFamily: "monospace" }}>{d.data.ticker}</div>
+          <div style={{ color: "#fff", fontWeight: 800, fontSize: isMobile ? 11 : 14 }}>{d.data.name}</div>
+          <div style={{ color: "rgba(255,255,255,0.3)", fontSize: 8, marginTop: 1, fontFamily: "monospace" }}>{d.data.ticker}</div>
         </div>
         <div
           style={{
-            padding: "3px 8px",
-            borderRadius: 5,
+            padding: "2px 6px",
+            borderRadius: 4,
             background: ch > 0 ? "rgba(255,40,60,0.15)" : ch < 0 ? "rgba(40,80,255,0.15)" : "rgba(255,255,255,0.06)",
-            color: ch > 0 ? (a > 10 ? "#ff6eaa" : "#ff5555") : a > 10 ? "#60ddff" : "#5090ff",
+            color: ch > 0 ? "#ff6b6b" : "#70aaff",
             fontSize: isMobile ? 11 : 14,
             fontWeight: 900,
             fontFamily: "monospace",
@@ -205,11 +205,11 @@ const Tip = ({ d, x, y, cR }) => {
           {ch > 0 ? "▲" : ch < 0 ? "▼" : "−"} {a.toFixed(2)}%
         </div>
       </div>
-      <div style={{ borderTop: "1px solid rgba(255,255,255,0.05)", paddingTop: 7, display: "flex", flexDirection: "column", gap: 3, fontSize: isMobile ? 9 : 10.5 }}>
-        {[["시가총액", cap, true], ["대분류", sec], ["중분류", mid], ["소분류", ind]].map(([k, v, mono]) => (
+      <div style={{ borderTop: "1px solid rgba(255,255,255,0.05)", paddingTop: 5, display: "flex", flexDirection: "column", gap: 2, fontSize: isMobile ? 8.5 : 10.5 }}>
+        {[["시총", cap, true], ["분류", mid]].map(([k, v, mono]) => (
           <div key={k} style={{ display: "flex", width: "100%" }}>
             <span style={{ color: "rgba(255,255,255,0.3)", flex: 1 }}>{k}</span>
-            <span style={{ color: mono ? "#fff" : "rgba(255,255,255,0.6)", fontWeight: mono ? 700 : 600, fontFamily: mono ? "monospace" : "inherit", textAlign: "right" }}>{v}</span>
+            <span style={{ color: mono ? "#fff" : "rgba(255,255,255,0.6)", fontWeight: mono ? 700 : 600, textAlign: "right" }}>{v}</span>
           </div>
         ))}
       </div>
@@ -220,22 +220,12 @@ const Tip = ({ d, x, y, cR }) => {
 const Legend = () => {
   const v = [-29, -15, -10, -5, -3, -1, 0, 1, 3, 5, 10, 15, 29];
   return (
-    <div style={{ display: "flex", alignItems: "center", flexShrink: 0, overflowX: "auto", maxWidth: "100%" }}>
-      <span style={{ fontSize: 8, color: "#60ddff", marginRight: 5, fontWeight: 800 }}>하락</span>
+    <div style={{ display: "flex", alignItems: "center", flexShrink: 0, overflowX: "auto" }}>
+      <span style={{ fontSize: 8, color: "#60ddff", marginRight: 4, fontWeight: 800 }}>DN</span>
       {v.map((val, i) => (
-        <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <div
-            style={{
-              width: 18,
-              height: 10,
-              background: gc(val),
-              borderRadius: i === 0 ? "4px 0 0 4px" : i === v.length - 1 ? "0 4px 4px 0" : 0,
-              borderRight: i < v.length - 1 ? "1px solid rgba(0,0,0,0.5)" : "none",
-            }}
-          />
-        </div>
+        <div key={i} style={{ width: 14, height: 8, background: gc(val), borderRight: "1px solid rgba(0,0,0,0.3)" }} />
       ))}
-      <span style={{ fontSize: 8, color: "#ff6eaa", marginLeft: 5, fontWeight: 800 }}>상승</span>
+      <span style={{ fontSize: 8, color: "#ff6eaa", marginLeft: 4, fontWeight: 800 }}>UP</span>
     </div>
   );
 };
@@ -274,16 +264,21 @@ export default function KRXHeatmap() {
   }, [fetchData]);
 
   useEffect(() => {
-    const fn = () => {
+    const handleResize = () => {
       if (ref.current) {
-        const r = ref.current.getBoundingClientRect();
-        setDims({ w: r.width, h: Math.max(window.innerHeight * 0.7, 400) });
+        const container = ref.current.parentElement;
+        const rect = container.getBoundingClientRect();
+        // 헤더와 푸터 높이를 제외한 가용 높이 계산
+        setDims({ 
+          w: rect.width, 
+          h: window.innerHeight - 110 // 헤더(약 60px) + 푸터(약 40px) 고려
+        });
       }
     };
-    fn();
-    window.addEventListener("resize", fn);
-    return () => window.removeEventListener("resize", fn);
-  }, []);
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, [loading]);
 
   const { leaves, secN, midN } = useMemo(() => {
     if (!data) return { leaves: [], secN: [], midN: [] };
@@ -310,42 +305,30 @@ export default function KRXHeatmap() {
     return { leaves: h.leaves(), secN, midN };
   }, [data, dims, sec]);
 
-  const onM = useCallback((e) => {
-    if (!ref.current) return;
-    const r = ref.current.getBoundingClientRect();
-    const x = e.clientX - r.left, y = e.clientY - r.top;
-    setMouse({ x, y });
-  }, []);
-
   if (loading) return (
-    <div style={{ width: "100%", height: "100vh", background: "#0a0a0e", display: "flex", alignItems: "center", justifyContent: "center", color: "rgba(255,255,255,0.2)" }}>
+    <div style={{ width: "100%", height: "100dvh", background: "#0a0a0e", display: "flex", alignItems: "center", justifyContent: "center", color: "rgba(255,255,255,0.2)" }}>
       <RefreshCcw className="animate-spin" size={32} />
     </div>
   );
 
   return (
-    <div style={{ width: "100%", height: "100vh", background: "#0a0a0e", display: "flex", flexDirection: "column", fontFamily: "-apple-system,BlinkMacSystemFont,'Malgun Gothic',sans-serif", overflow: "hidden" }}>
-      <div style={{ padding: "8px 12px", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid rgba(255,255,255,0.04)", flexShrink: 0, flexWrap: "wrap", gap: 10 }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
-          <div style={{ display: "flex", alignItems: "baseline", gap: 4 }}>
-            <span style={{ fontSize: 16, fontWeight: 900, color: "#fff" }}>KRX</span>
-            <span style={{ fontSize: 9, fontWeight: 600, color: "rgba(255,255,255,0.18)", letterSpacing: "1px" }}>WICS MAP</span>
+    <div style={{ width: "100%", height: "100dvh", background: "#0a0a0e", display: "flex", flexDirection: "column", fontFamily: "-apple-system,BlinkMacSystemFont,'Malgun Gothic',sans-serif", overflow: "hidden", position: "fixed", top: 0, left: 0 }}>
+      {/* HEADER */}
+      <div style={{ padding: "8px 12px", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid rgba(255,255,255,0.04)", flexShrink: 0, gap: 8 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 8, overflowX: "auto", flex: 1 }}>
+          <div style={{ display: "flex", alignItems: "baseline", gap: 2, flexShrink: 0 }}>
+            <span style={{ fontSize: 14, fontWeight: 900, color: "#fff" }}>KRX</span>
           </div>
-          <div style={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
+          <div style={{ display: "flex", gap: 2 }}>
             {[null, ...data.children.map(c => c.name)].map(s => (
               <button 
                 key={s || "a"} 
                 onClick={() => setSec(sec === s ? null : s)} 
                 style={{ 
-                  padding: "3px 8px", 
-                  fontSize: 10, 
-                  fontWeight: 700, 
-                  borderRadius: 4, 
-                  cursor: "pointer", 
+                  padding: "2px 6px", fontSize: 9, fontWeight: 700, borderRadius: 4, cursor: "pointer", 
                   background: (s === null ? !sec : sec === s) ? "rgba(255,255,255,0.18)" : "rgba(255,255,255,0.05)", 
-                  color: (s === null ? !sec : sec === s) ? "#fff" : "rgba(255,255,255,0.55)", 
-                  border: (s === null ? !sec : sec === s) ? "1px solid rgba(255,255,255,0.3)" : "1px solid rgba(255,255,255,0.1)",
-                  transition: "all 0.2s"
+                  color: (s === null ? !sec : sec === s) ? "#fff" : "rgba(255,255,255,0.5)", 
+                  border: "none", whiteSpace: "nowrap"
                 }}
               >
                 {s || "전체"}
@@ -356,28 +339,34 @@ export default function KRXHeatmap() {
         <Legend />
       </div>
 
-      <div ref={ref} onMouseMove={onM} onMouseLeave={() => { setTip(null); setHov(null); setDd(null); }} onTouchMove={(e) => { const t = e.touches[0]; const r = ref.current.getBoundingClientRect(); setMouse({ x: t.clientX - r.left, y: t.clientY - r.top }); }} style={{ flex: 1, position: "relative", margin: "2px", overflow: "hidden" }}>
+      {/* HEATMAP AREA */}
+      <div 
+        ref={ref} 
+        onMouseMove={(e) => { const r = ref.current.getBoundingClientRect(); setMouse({ x: e.clientX - r.left, y: e.clientY - r.top }); }}
+        onMouseLeave={() => { setTip(null); setHov(null); setDd(null); }} 
+        onTouchMove={(e) => { const t = e.touches[0]; const r = ref.current.getBoundingClientRect(); setMouse({ x: t.clientX - r.left, y: t.clientY - r.top }); }}
+        style={{ flex: 1, position: "relative", margin: "1px", overflow: "hidden" }}
+      >
         <svg width={dims.w} height={dims.h} style={{ display: "block" }}>
           {secN.map((s, i) => {
             const av = avg(s), w = s.x1 - s.x0, h = s.y1 - s.y0;
-            if (w < 40) return null;
+            if (w < 30) return null;
             return (
               <g key={`s${i}`} onMouseEnter={() => { setDd(s); setDdP({ x: s.x0, y: s.y0 + SH }); }} onMouseLeave={() => setDd(null)}>
                 <rect x={s.x0} y={s.y0} width={w} height={h} fill={gcD(av, 0.12)} stroke={gcD(av, 0.3)} strokeWidth={1} rx={2} />
                 <rect x={s.x0} y={s.y0} width={w} height={SH} fill={gcD(av, 0.4)} rx={2} />
-                <text x={s.x0 + 5} y={s.y0 + SH - 3.5} fill="#fff" fontSize={10} fontWeight={800}>{s.data.name.substring(0, Math.floor(w/6))}</text>
+                <text x={s.x0 + 4} y={s.y0 + SH - 3.5} fill="#fff" fontSize={9} fontWeight={800}>{s.data.name.substring(0, Math.floor(w/7))}</text>
               </g>
             );
           })}
           {midN.map((m, i) => {
             const av = avg(m), w = m.x1 - m.x0, h = m.y1 - m.y0;
-            if (w < 20 || h < MH + 4) return null;
+            if (w < 15 || h < MH + 4) return null;
             return (
               <g key={`m${i}`} onMouseEnter={() => { setDd(m); setDdP({ x: m.x0, y: m.y0 + MH }); }} onMouseLeave={() => setDd(null)}>
                 <rect x={m.x0} y={m.y0} width={w} height={h} fill="transparent" stroke="rgba(255,255,255,0.05)" strokeWidth={0.5} rx={1} />
-                {/* 중분류 텍스트 가독성 강화 */}
                 <rect x={m.x0} y={m.y0} width={w} height={MH} fill="rgba(255,255,255,0.08)" rx={1} />
-                <text x={m.x0 + 3} y={m.y0 + MH - 2.5} fill="rgba(255,255,255,0.7)" fontSize={8.5} fontWeight={800}>{m.data.name.substring(0, Math.floor(w/7))}</text>
+                <text x={m.x0 + 2} y={m.y0 + MH - 2.5} fill="rgba(255,255,255,0.7)" fontSize={8} fontWeight={800}>{m.data.name.substring(0, Math.floor(w/8))}</text>
               </g>
             );
           })}
@@ -385,19 +374,19 @@ export default function KRXHeatmap() {
             const w = leaf.x1 - leaf.x0, h = leaf.y1 - leaf.y0;
             if (w < 1 || h < 1) return null;
             const ch = leaf.data.change, isH = hov === i;
-            const fontSize = Math.max(7, Math.min(13, Math.sqrt(w * h) / 7));
-            const showName = w > 20 && h > 12;
-            const showChange = w > 35 && h > 25;
+            const fontSize = Math.max(6.5, Math.min(13, Math.sqrt(w * h) / 7.5));
+            const showName = w > 18 && h > 10;
+            const showChange = w > 32 && h > 22;
             return (
               <g key={`t${i}`} onMouseEnter={() => { setHov(i); setTip(leaf); setDd(null); }} onMouseLeave={() => { setHov(null); setTip(null); }} onClick={() => setTip(leaf)} style={{ cursor: "pointer" }}>
                 <rect x={leaf.x0} y={leaf.y0} width={w} height={h} fill={gc(ch)} stroke={isH ? "#fff" : "rgba(0,0,0,0.2)"} strokeWidth={isH ? 1.5 : 0.3} rx={1} style={{ filter: glw(ch) }} />
                 {showName && (
-                  <text x={leaf.x0 + w/2} y={leaf.y0 + h/2 + (showChange ? -2 : 4)} textAnchor="middle" fill={txt(ch)} fontSize={fontSize} fontWeight={800} style={{ pointerEvents: "none" }}>
-                    {w < 40 ? leaf.data.name.substring(0, 2) : leaf.data.name.substring(0, Math.floor(w/8))}
+                  <text x={leaf.x0 + w/2} y={leaf.y0 + h/2 + (showChange ? -2 : 3)} textAnchor="middle" fill={txt(ch)} fontSize={fontSize} fontWeight={800} style={{ pointerEvents: "none" }}>
+                    {w < 35 ? leaf.data.name.substring(0, 2) : leaf.data.name.substring(0, Math.floor(w/8.5))}
                   </text>
                 )}
                 {showChange && (
-                  <text x={leaf.x0 + w/2} y={leaf.y0 + h/2 + fontSize + 2} textAnchor="middle" fill={txt(ch, 0.7)} fontSize={fontSize * 0.8} fontWeight={600} fontFamily="monospace" style={{ pointerEvents: "none" }}>
+                  <text x={leaf.x0 + w/2} y={leaf.y0 + h/2 + fontSize + 1} textAnchor="middle" fill={txt(ch, 0.7)} fontSize={fontSize * 0.8} fontWeight={600} fontFamily="monospace" style={{ pointerEvents: "none" }}>
                     {(ch > 0 ? "+" : "") + ch.toFixed(1)}%
                   </text>
                 )}
@@ -409,22 +398,22 @@ export default function KRXHeatmap() {
         <Tip d={tip} x={mouse.x} y={mouse.y} cR={dims} />
       </div>
 
-      <div style={{ padding: "6px 12px", borderTop: "1px solid rgba(255,255,255,0.03)", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 6 }}>
-        <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+      {/* FOOTER */}
+      <div style={{ padding: "6px 12px 10px", borderTop: "1px solid rgba(255,255,255,0.03)", display: "flex", justifyContent: "space-between", alignItems: "center", flexShrink: 0, gap: 6 }}>
+        <div style={{ display: "flex", gap: 8 }}>
           {(() => {
-            const up = leaves.filter(l => l.data.change > 0.3).length, dn = leaves.filter(l => l.data.change < -0.3).length, fl = leaves.length - up - dn;
+            const up = leaves.filter(l => l.data.change > 0.3).length, dn = leaves.filter(l => l.data.change < -0.3).length;
             return (
               <>
-                <div style={{ display: "flex", gap: 3, alignItems: "center" }}><TrendingUp size={12} color="#ff5050" /><span style={{ fontSize: 10, color: "#ff6b6b", fontWeight: 700 }}>{up}</span></div>
-                <div style={{ display: "flex", gap: 3, alignItems: "center" }}><TrendingDown size={12} color="#4488ff" /><span style={{ fontSize: 10, color: "#70aaff", fontWeight: 700 }}>{dn}</span></div>
-                <div style={{ display: "flex", gap: 3, alignItems: "center" }}><Minus size={12} color="#888" /><span style={{ fontSize: 10, color: "#aaa", fontWeight: 700 }}>{fl}</span></div>
+                <div style={{ display: "flex", gap: 2, alignItems: "center" }}><TrendingUp size={10} color="#ff5050" /><span style={{ fontSize: 9, color: "#ff6b6b", fontWeight: 700 }}>{up}</span></div>
+                <div style={{ display: "flex", gap: 2, alignItems: "center" }}><TrendingDown size={10} color="#4488ff" /><span style={{ fontSize: 9, color: "#70aaff", fontWeight: 700 }}>{dn}</span></div>
               </>
             );
           })()}
         </div>
-        <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-          <span style={{ fontSize: 9, color: "rgba(255,255,255,0.2)", fontFamily: "monospace" }}>{lastUpdated.split(" ")[1]} 갱신</span>
-          <button onClick={fetchData} style={{ background: "none", border: "none", color: "rgba(255,255,255,0.3)", cursor: "pointer" }}><RefreshCcw size={12} /></button>
+        <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
+          <span style={{ fontSize: 8, color: "rgba(255,255,255,0.2)", fontFamily: "monospace" }}>{lastUpdated.split(" ")[1]}</span>
+          <button onClick={fetchData} style={{ background: "none", border: "none", color: "rgba(255,255,255,0.3)", cursor: "pointer", padding: 4 }}><RefreshCcw size={10} /></button>
         </div>
       </div>
     </div>
