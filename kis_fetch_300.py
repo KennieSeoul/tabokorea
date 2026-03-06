@@ -319,11 +319,21 @@ def get_price(token, code):
         if data.get("rt_cd") != "0":
             return None
         o = data["output"]
+        
+        # 종목명 추출 (우선순위: hts_kor_isnm -> bstp_kor_isnm -> rprs_mrkt_kor_name)
+        # 만약 rprs_mrkt_kor_name이 'KOSPI 200' 같은 시장 명칭이면 제외하도록 로직 추가
+        name = o.get("hts_kor_isnm", "").strip()
+        if not name or name == "KOSPI 200" or name == "코스피 200":
+            name = o.get("bstp_kor_isnm", "").strip()
+        if not name:
+            name = o.get("rprs_mrkt_kor_name", "").strip()
+            
         cap_억 = int(o.get("hts_avls", 0))
         if cap_억 == 0:
             return None
+            
         return {
-            "name": o.get("hts_kor_isnm", "").strip() or o.get("rprs_mrkt_kor_name", "").strip(),
+            "name": name,
             "ticker": code,
             "price": int(o.get("stck_prpr", 0)),
             "change": float(o.get("prdy_ctrt", 0)),
