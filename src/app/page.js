@@ -288,7 +288,8 @@ export default function KRXHeatmap() {
 
   const fetchData = useCallback(async () => {
     try {
-      const res = await fetch("/krx_heatmap_data.json?t=" + Date.now());
+      // Cloudflare Worker API 엔드포인트로 변경
+      const res = await fetch("https://krx-api.kennies-seoul.workers.dev/api/heatmap");
       if (!res.ok) throw new Error("Fetch failed");
       const json = await res.json();
       setData(json);
