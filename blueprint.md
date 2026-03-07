@@ -29,6 +29,21 @@
 *   **Microsoft Clarity:** `vs5mi1uyye` 트래킹 스크립트 설치 및 GA4 연동을 통해 통합 데이터 분석 (히트맵, 세션 녹화 등).
 *   **구현:** Next.js의 `next/script`를 사용하여 `RootLayout`(`src/app/layout.js`)에 GA4와 Clarity 스크립트 삽입.
 
+## 🛡️ 개발 원칙: SEO & GEO 최적화 표준 (Standard)
+성공적인 검색 및 생성형 AI 엔진(GEO) 최적화를 위해 개발 초기 단계부터 다음 원칙을 엄격히 준수합니다.
+
+### 1. 하이브리드 아키텍처 설계 (Rendering Strategy)
+*   **Server Components (SSR):** 검색 엔진 봇과 AI 엔진이 읽어야 할 핵심 데이터 영역(시장 요약, 종목 리스트, 메타데이터)은 서버에서 미리 렌더링하여 전달합니다.
+*   **Client Components (CSR):** 실시간 히트맵 조작, 필터링 등 사용자 인터랙션이 집중된 UI 영역으로 경계를 명확히 분리합니다.
+
+### 2. 구조화된 데이터 제공 (Structured Data)
+*   모든 페이지와 모듈 개발 시 해당 영역의 **JSON-LD(Schema.org)** 데이터를 함께 작성하여 AI 엔진이 데이터의 의미를 할루시네이션 없이 파악하도록 합니다.
+*   단위별 개발 단계에서 메타데이터(Title, Description, OpenGraph)를 즉각 생성하고 최적화합니다.
+
+### 3. 렌더링 검증 및 성능 관리 (Verification)
+*   **Verified Content:** 자바스크립트 의존도를 관리하여 봇의 크롤링 효율성을 극대화합니다.
+*   **Lighthouse Audit:** 사후 처리가 아닌 개발 단위별로 DOM 트리의 정상 렌더링 여부를 개별 검증합니다.
+
 ## 🛠️ 현재 시스템 상태
 *   **프론트엔드:** `finlook.app` (Next.js, 배포 완료 / tabokorea.pages.dev 연결)
 *   **백엔드:** `krx-api.divine-cherry-0477.workers.dev` (Cloudflare Worker, 정상 작동)
