@@ -26,8 +26,8 @@
 
 ### 4. 분석 및 추적: 데이터 기반 개선 체계 구축
 *   **Google Analytics (GA4):** `G-DXGE2MMP49` 측정 ID 연동으로 유입 경로 및 사용자 행동 분석.
-*   **Microsoft Clarity:** Google Analytics와 연동하여 히트맵 및 세션 녹화 데이터를 통합 수집 (중복 스크립트 제거).
-*   **구현:** Next.js의 `next/script`를 사용하여 `RootLayout`(`src/app/layout.js`)에 최적화된 방식으로 GA4 삽입.
+*   **Microsoft Clarity:** `vs5mi1uyye` 트래킹 스크립트 설치 및 GA4 연동을 통해 통합 데이터 분석 (히트맵, 세션 녹화 등).
+*   **구현:** Next.js의 `next/script`를 사용하여 `RootLayout`(`src/app/layout.js`)에 GA4와 Clarity 스크립트 삽입.
 
 ## 🛠️ 현재 시스템 상태
 *   **프론트엔드:** `finlook.app` (Next.js, 배포 완료 / tabokorea.pages.dev 연결)
