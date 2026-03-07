@@ -24,8 +24,13 @@
 *   **가독성 개선:** 중분류(WICS 2단계) 바의 배경색과 글씨 색상을 조정하여 가계 구분을 명확히 함.
 *   **상단 탭:** 필터 버튼의 텍스트 밝기를 높여 비활성 상태에서도 가독성 확보.
 
+### 4. 분석 및 추적: Google Analytics (GA4) 연동
+*   **작업:** `G-DXGE2MMP49` 측정 ID를 기반으로 Google Analytics 스크립트 삽입.
+*   **구현:** Next.js의 `next/script`를 사용하여 `RootLayout`(`src/app/layout.js`)에 최적화된 방식으로 삽입.
+*   **목적:** 유입 경로 분석 및 사용자 행동 데이터 수집을 통한 서비스 개선 기반 마련.
+
 ## 🛠️ 현재 시스템 상태
-*   **프론트엔드:** `tabokorea.pages.dev` (Next.js, 배포 완료)
+*   **프론트엔드:** `finlook.app` (Next.js, 배포 완료 / tabokorea.pages.dev 연결)
 *   **백엔드:** `krx-api.divine-cherry-0477.workers.dev` (Cloudflare Worker, 정상 작동)
 *   **데이터:** 상위 51개 핵심 종목 중심 (시총 비중 고려 최적화)
 
